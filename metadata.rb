@@ -12,6 +12,8 @@ recipe            "sls_ci::config_vagrant", "Setup an env for testing vagrant bu
 recipe            "sls_ci::jobs", "Manage jobs on the Jenkins server"
 recipe            "sls_ci::ark", "Utility script to install ark reliably on CentOS 6 using the epel-testing repo"
 
+depends "ark"
+depends "ant"
 depends "jenkins"
 suggests "php"
 suggests "composer"
