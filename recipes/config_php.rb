@@ -43,11 +43,14 @@ end
 pear_pkgs.each do |channel_name, pkgs|
     # discover the channel
     pear_channel = php_pear_channel channel_name do
-      action :discover
+        not_if "pear list channels | grep #{channel_name}"
+        action :discover
     end
     # using this channel, install the packages
     pkgs.each do |pkg_name,pkg_version|
         php_pear pkg_name do
+            # @todo: setup so this not_if checks version also
+            not_if "pear list --allchannels | grep #{pkg_name}"
             version pkg_version
             channel pear_channel.channel_name
             action :install
