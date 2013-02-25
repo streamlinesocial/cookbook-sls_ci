@@ -11,6 +11,7 @@ recipe            "sls_ci::config_php", "Setup an env for testing php apps"
 recipe            "sls_ci::config_vagrant", "Setup an env for testing vagrant builds"
 recipe            "sls_ci::jobs", "Manage jobs on the Jenkins server"
 recipe            "sls_ci::ark", "Utility script to install ark reliably on CentOS 6 using the epel-testing repo"
+recipe            "sls_ci::node", "For build nodes, set settings or other pre-config values (like use the ip to access the node not the fqdn)"
 
 depends "ark"
 depends "ant"

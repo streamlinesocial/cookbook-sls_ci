@@ -23,6 +23,10 @@ cookbook_file "#{node["jenkins"]["server"]["home"]}/hudson.plugins.git.GitSCM.xm
     mode 00644
 end
 
+service "jenkins" do
+    action [:start, :reload, :enable]
+end
+
 # add the jenkins php xml
 # @see http://jenkins-php.org
 
@@ -51,4 +55,3 @@ end
 # jenkins_cli "reload-jenkins-configuration" do
 #     command "reload-configuration"
 # end
-
