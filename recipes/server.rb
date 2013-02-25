@@ -24,7 +24,7 @@ cookbook_file "#{node["jenkins"]["server"]["home"]}/hudson.plugins.git.GitSCM.xm
 end
 
 service "jenkins" do
-    action [:start, :reload, :enable]
+    action [:start, :enable]
 end
 
 # add the jenkins php xml
