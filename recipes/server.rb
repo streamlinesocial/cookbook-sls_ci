@@ -14,18 +14,18 @@
     end
 end
 
-# default configs for git
-cookbook_file "#{node["jenkins"]["server"]["home"]}/hudson.plugins.git.GitSCM.xml" do
-    action :create_if_missing
-    source "config/hudson.plugins.git.GitSCM.xml"
-    owner node["jenkins"]["server"]["user"]
-    group node["jenkins"]["server"]["group"]
-    mode 00644
-end
-
-service "jenkins" do
-    action [:start, :enable]
-end
+# # default configs for git
+# cookbook_file "#{node["jenkins"]["server"]["home"]}/hudson.plugins.git.GitSCM.xml" do
+#     action :create_if_missing
+#     source "config/hudson.plugins.git.GitSCM.xml"
+#     owner node["jenkins"]["server"]["user"]
+#     group node["jenkins"]["server"]["group"]
+#     mode 00644
+# end
+# 
+# service "jenkins" do
+#     action [:start, :enable]
+# end
 
 # add the jenkins php xml
 # @see http://jenkins-php.org
