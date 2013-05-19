@@ -16,5 +16,6 @@ recipe            "sls_ci::node", "For build nodes, set settings or other pre-co
 depends "ark"
 depends "ant"
 depends "jenkins"
+depends "ssh_known_hosts"
 suggests "php"
 suggests "composer"
