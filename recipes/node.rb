@@ -23,4 +23,6 @@ file "#{node['jenkins']['node']['home']}/.ssh/id_rsa.pub" do
 end
 
 # setup the node to enable checkouts from our repos without manual interaction for the first checkout
-ssh_known_hosts_entry 'streamlinesocial.unfuddle.com'
+node["sls_ci"]["known_hosts"].each do |url|
+    ssh_known_hosts_entry url
+end
