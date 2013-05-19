@@ -14,6 +14,16 @@
     end
 end
 
+unless Chef::Config[:solo]
+    partial_search(:node, 'chef_environment:jenkins',
+        :keys => { 'name' => [ 'name' ],
+                   'ip'   => [ 'ipaddress' ] }
+    ).each do |n|
+        # add each of our servers in the jenkins env to the node list
+        ssh_known_hosts_entry n['ip']
+    end
+end
+
 # # default configs for git
 # cookbook_file "#{node["jenkins"]["server"]["home"]}/hudson.plugins.git.GitSCM.xml" do
 #     action :create_if_missing
