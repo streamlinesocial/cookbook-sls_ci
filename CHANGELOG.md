@@ -1,3 +1,9 @@
+0.2.1
+=====
+
+- add requirement of the ssh_know_hosts cookbook for better git clone automation
+- use proper id_rsa key names so they are automatically found in most ssh calls
+
 0.2.0
 =====
 
