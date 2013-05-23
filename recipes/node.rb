@@ -6,12 +6,17 @@ node.set["jenkins"]["node"]["name"] = node["fqdn"]
 # setup the ssh private key
 jenkins_bag = data_bag_item("users", "jenkins-node")
 
+directory "#{node['jenkins']['node']['home']}/.ssh]" do
+    action :nothing
+end
+
 file "#{node['jenkins']['node']['home']}/.ssh/id_rsa" do
     content jenkins_bag["private_key"]
     owner node['jenkins']['node']['user']
     group node['jenkins']['node']['user']
     mode '0600'
-    action :create
+    action :nothing
+    subscribes :create, "directory[#{node['jenkins']['node']['home']}/.ssh]", :immediately
 end
 
 file "#{node['jenkins']['node']['home']}/.ssh/id_rsa.pub" do
@@ -19,7 +24,8 @@ file "#{node['jenkins']['node']['home']}/.ssh/id_rsa.pub" do
     owner node['jenkins']['node']['user']
     group node['jenkins']['node']['user']
     mode '0644'
-    action :create
+    action :nothing
+    subscribes :create, "directory[#{node['jenkins']['node']['home']}/.ssh]", :immediately
 end
 
 # setup the node to enable checkouts from our repos without manual interaction for the first checkout
