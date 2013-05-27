@@ -3,6 +3,7 @@
 
 - add requirement of the ssh_know_hosts cookbook for better git clone automation
 - use proper id_rsa key names so they are automatically found in most ssh calls
+- added rvm script to install ruby / gems for jenkins env
 
 0.2.0
 =====
