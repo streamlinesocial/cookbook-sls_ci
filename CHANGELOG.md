@@ -1,3 +1,8 @@
+0.3.0
+=====
+
+- update node recipe to take care of all the jenkins node stuff taken from the jenkins::_node_ssh recipe
+
 0.2.1
 =====
 
