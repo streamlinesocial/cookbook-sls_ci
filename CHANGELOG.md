@@ -1,3 +1,8 @@
+0.4.0
+=====
+
+- updates to virtualbox to ensure installing virtualbox works
+
 0.3.0
 =====
 

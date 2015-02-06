@@ -3,7 +3,7 @@ maintainer_email  "chris@buryta.com"
 license           "Apache 2.0"
 description       "Configures Streamline Social CI Server"
 long_description  IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version           "0.3.0"
+version           "0.4.0"
 
 recipe            "sls_ci", "Empty"
 recipe            "sls_ci::server", "Main configuration for Jenkins server"
