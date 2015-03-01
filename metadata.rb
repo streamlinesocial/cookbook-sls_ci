@@ -1,3 +1,4 @@
+name              "sls_ci"
 maintainer        "Chris Buryta"
 maintainer_email  "chris@buryta.com"
 license           "Apache 2.0"
